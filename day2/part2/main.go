@@ -70,6 +70,9 @@ func part1(fname string) (position, error) {
 
 		p = p.move(parts[0], d)
 	}
+	if  err := scanner.Err(); err != nil {
+		return position{}, err
+	}
 
 	return p, nil
 }
