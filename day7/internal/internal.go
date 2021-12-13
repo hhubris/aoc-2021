@@ -34,6 +34,9 @@ var (
 )
 
 func GeometricCost(d []int, target int) int {
+	// i wanted to be able to keep a simple interface for cost methods, but only calculate the costs once
+	// i also didn't want to hard code the lenghts of the array so it was just easiest to use a 
+	// sync.Once to calculate them the first time this method is called
 	o.Do(func() {
 		geometricCosts = make([]int, len(d))
 		c := 0
